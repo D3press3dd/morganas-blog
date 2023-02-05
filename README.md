@@ -1,0 +1,1 @@
+## MINIMALIST BLOG
