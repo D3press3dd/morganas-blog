@@ -1,4 +1,10 @@
-import { ArticleCardStyled, ArticleCardTitle, ArticleDate } from './ArticleCardStyled'
+import {
+  ArticleCardStyled,
+  ArticleCardTitle,
+  ArticleDate,
+  ArticleImage,
+  ArticleLeftSide
+} from './ArticleCardStyled'
 
 interface ArticleCardProps {
   articleDate: string
@@ -7,18 +13,23 @@ interface ArticleCardProps {
   articleInfo: string
 }
 
-export function ArticleCard ({ articleDate, articleTitle, articleImg, articleInfo }: ArticleCardProps): JSX.Element {
+export function ArticleCard ({
+  articleDate,
+  articleTitle,
+  articleImg,
+  articleInfo
+}: ArticleCardProps): JSX.Element {
   return (
     <ArticleCardStyled>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 10 }}>
+      <ArticleLeftSide>
         <ArticleDate>{articleDate}</ArticleDate>
         <ArticleCardTitle>{articleTitle}</ArticleCardTitle>
         <p>{articleInfo}</p>
-        </div>
+      </ArticleLeftSide>
 
-        <div>
-            <img src={articleImg} alt="" />
-        </div>
+      <div>
+        <ArticleImage src={articleImg} alt='' />
+      </div>
     </ArticleCardStyled>
   )
 }
