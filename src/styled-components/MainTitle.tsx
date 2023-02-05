@@ -19,6 +19,10 @@ const H1 = styled.h1`
       font-size: calc(76px/2);
     }
 
+    @media (max-width: 380px) {
+      font-size: 28px;
+    }
+
 `
 
 export function MainTitle ({ children }: MainTitleProps): JSX.Element {

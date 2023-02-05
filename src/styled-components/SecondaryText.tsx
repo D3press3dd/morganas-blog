@@ -13,6 +13,10 @@ const Secondary = styled.h3`
     @media (max-width: 480px) {
       font-size: 20px;
     }
+
+    @media (max-width: 380px) {
+      font-size: 18px;
+    }
 `
 
 export function SecondaryText ({ children }: SecondaryProps): JSX.Element {

@@ -8,11 +8,14 @@ export const HeroSectionStyled = styled.div`
   background-color: var(--white);
   padding: 80px 20px;
 
-  @media (max-width: 320px) {
+  @media (max-width: 380px) {
     padding-inline:10px ;
   }
 
   & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: 70%;
 
     @media (max-width: 1200px) {
@@ -22,5 +25,9 @@ export const HeroSectionStyled = styled.div`
 
   & > div > div {
     padding-inline: 12%;
+
+    @media (max-width: 380px) {
+      padding-inline:unset;
+    }
   }
 `
