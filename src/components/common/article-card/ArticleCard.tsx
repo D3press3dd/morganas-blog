@@ -3,8 +3,12 @@ import {
   ArticleCardTitle,
   ArticleDate,
   ArticleImage,
+  ArticleInfo,
   ArticleLeftSide
 } from './ArticleCardStyled'
+
+import noneBg from '../../../assets/none.jpg'
+import { truncateText } from '../../../utils/truncateText'
 
 interface ArticleCardProps {
   articleDate: string
@@ -13,22 +17,17 @@ interface ArticleCardProps {
   articleInfo: string
 }
 
-export function ArticleCard ({
-  articleDate,
-  articleTitle,
-  articleImg,
-  articleInfo
-}: ArticleCardProps): JSX.Element {
+export function ArticleCard ({ articleDate, articleTitle, articleImg, articleInfo }: ArticleCardProps): JSX.Element {
   return (
     <ArticleCardStyled>
       <ArticleLeftSide>
         <ArticleDate>{articleDate}</ArticleDate>
         <ArticleCardTitle>{articleTitle}</ArticleCardTitle>
-        <p>{articleInfo}</p>
+        <ArticleInfo>{truncateText(articleInfo)}</ArticleInfo>
       </ArticleLeftSide>
 
       <div>
-        <ArticleImage src={articleImg} alt='' />
+        <ArticleImage loading='lazy' src={articleImg === '' ? noneBg : articleImg } alt='' />
       </div>
     </ArticleCardStyled>
   )
